@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSources": true,
+    "isolatedModules": false,
+    "lib": ["es2015", "dom"],
+    "listEmittedFiles": false,
+    "listFiles": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitUseStrict": false,
+    "noUnusedLocals": false,
+    "outDir": "build",
+    "plugins": [
+      {
+        "name": "typescript-lit-html-plugin",
+        "tags": ["html", "svg", "template"]
+      }
+    ],
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "rootDir": "src",
+    "skipDefaultLibCheck": true,
+    "sourceMap": true,
+    "stripInternal": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es2015"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "parcelTsPluginOptions": {
+    // If true type-checking is disabled
+    "transpileOnly": false
+  }
+}
