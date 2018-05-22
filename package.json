@@ -6,9 +6,8 @@
   "scripts": {
     "start": "parcel public/index.html",
     "build": "parcel build public/index.html",
-    "lint": "tslint -c tslint.json 'src/**/*.ts' 'src/**/*.tsx' 'test/**/*.ts'",
-    "format":
-      "prettier --write \"./src/**/*.*\" \"./test/**/*.*\" \"./**/*.json\""
+    "lint": "tslint -c tslint.json 'src/**/*.ts' 'test/**/*.ts'",
+    "format": "prettier --write \"./src/**/*.*\" \"./test/**/*.*\""
   },
   "keywords": ["lit-html", "typescript", "parcel", "meiosis"],
   "dependencies": {
