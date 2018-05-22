@@ -1,17 +1,27 @@
 import flyd from 'flyd';
 import { render } from 'lit-html/lib/lit-extended';
+import { createAppModel, createApp } from './app';
 import { createCounter } from './counter';
-import { UpdateFunction } from './utils/types';
+import { createNavigation, createRouter } from './navigation';
 
 let update = flyd.stream();
 
+const navigation = createNavigation(update);
+const router = createRouter(navigation);
+
+const app = createApp(update, navigation, router);
 const counter = createCounter(update);
 
 const models = flyd.scan(
-  (model: any, func: any) => func(model),
-  counter.model(),
+  (model: any, modelUpdate: any) => modelUpdate(model),
+  createAppModel(),
   update
 );
 
 const element = document.getElementById('app');
-models.map(model => render(counter.view(model), element));
+models.map(model => render(app.view(model), element));
+
+// Resolve initial route
+router.resolveRoute();
+// Route sync
+models.map(router.routeSync);
